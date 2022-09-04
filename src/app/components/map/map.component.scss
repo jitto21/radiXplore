@@ -1,8 +1,12 @@
 div.wrapper {
   height: 100vh;
+
   #map {
     height: 100%;
     width: 80%;
+    border: 0.5px solid rgb(207, 207, 207);
+    box-shadow: 0 0 12px 3px rgb(207, 207, 207);
+    border-radius: 10px;
   }
 
 }

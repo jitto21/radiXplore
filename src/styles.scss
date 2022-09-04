@@ -2,11 +2,12 @@
 
 html,
 body {
-  height: 100%;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: url('./assets/images/map_bg.webp') no-repeat center;
+  background-size: cover;
 }

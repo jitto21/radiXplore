@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Bebas';
+  src: url('../../../assets/fonts/BebasNeue-Regular.ttf') format();
+}
+
+@font-face {
+  font-family: 'HeaderFont';
+  src: url('../../../assets/fonts/BebasNeue-Regular.eot');
+  src: url('../../../assets/fonts/BebasNeue-Regular.woff2') format('woff2'),
+    url('../../../assets/fonts/BebasNeue-Regular.woff') format('woff'),
+    url('../../../assets/fonts/BebasNeue-Regular.ttf') format('truetype'),
+}
+
+mat-toolbar {
+  // background: #FDFCF7; //grey
+  //@at-root background: #E2EDFE; //b;lue
+  // background: rgba(255, 255, 255, 0.6); //transparent
+  background: rgb(226, 237, 254);
+  background: linear-gradient(90deg, rgba(226, 237, 254, 1) 13%, rgba(233, 250, 234, 1) 67%, rgba(252, 249, 214, 1) 100%);
+  color: rgb(0, 0, 0) !important;
+  border-bottom: 0.5px solid rgb(207, 207, 207);
+  box-shadow: 0 0 12px 3px rgb(207, 207, 207);
+  font-size: 1.5rem;
+  font-family: 'HeaderFont', sans-serif;
+}

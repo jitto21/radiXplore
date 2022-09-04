@@ -46,7 +46,7 @@ export class MapComponent implements OnInit {
           searchControl.addTo(this.map)
 
           var marker = L.marker([lat, long], { icon }).addTo(this.map);
-          marker.bindPopup(data.name + " " + data.description)
+          marker.bindPopup(data.name + ", " + data.description)
           marker.on('click', function (e) {
             marker.openPopup();
           });
@@ -74,7 +74,7 @@ export class MapComponent implements OnInit {
   }
 
   onClickGoTop() {
-    document.getElementById("form")?.scrollIntoView();
+    document.getElementById("header")?.scrollIntoView();
   }
 
 }
