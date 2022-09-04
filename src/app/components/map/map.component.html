@@ -1,3 +1,7 @@
-<div class="wrapper p-5 d-flex justify-content-center">
+<div class="wrapper pm-5 d-flex justify-content-center flex-column align-items-center" [ngClass]="{'d-none': !locationData}">
+  <div class="info px-5 py-1" *ngIf="locationData">
+    <h3 class="fw-bold">{{locationData.name}}, {{ locationData.description }}, {{ getCoordinates(locationData.latitude,
+      locationData.longitude) }}</h3>
+  </div>
   <div id="map"></div>
 </div>

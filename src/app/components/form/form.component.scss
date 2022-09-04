@@ -3,5 +3,19 @@ div.wrapper {
 }
 
 div.form-wrapper {
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 720px) {
+  .coordinates-control, .form-buttons {
+    flex-direction: column !important;
+  }
+  .form-buttons {
+    :nth-child(1) {
+      margin-bottom: 0.2rem;
+    }
+    :nth-child(2) {
+      margin-top: 0.2rem;
+    }
+  }
 }
