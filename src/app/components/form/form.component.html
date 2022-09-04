@@ -17,12 +17,14 @@
         <mat-form-field appearance="outline">
           <mat-label>Latitude</mat-label>
           <input matInput placeholder="degrees" formControlName="latitude" appDecimal [maxLength]="7">
+          <mat-error>Please enter a valid latitude</mat-error>
           <mat-icon matSuffix> location_on </mat-icon>
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Longitude</mat-label>
           <input matInput placeholder="degrees" formControlName="longitude" appDecimal [maxLength]="7">
           <mat-icon matSuffix> location_on </mat-icon>
+          <mat-error>Please enter a valid longitude</mat-error>
         </mat-form-field>
       </div>
       <div class="d-flex justify-content-evenly form-buttons">

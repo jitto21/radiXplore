@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MapServiceService } from 'src/app/services/map-service.service';
 import * as L from 'leaflet';
+import "leaflet-search/dist/leaflet-search.src.js";
 
 @Component({
   selector: 'app-map',
@@ -21,7 +22,7 @@ export class MapComponent implements OnInit {
         this.map.remove();
       }
       console.log(data);
-      setTimeout(()=> {
+      setTimeout(() => {
         if (this.locationData && this.locationData.latitude && this.locationData.longitude) {
           const lat = +this.locationData.latitude;
           const long = +this.locationData.longitude;
@@ -31,8 +32,8 @@ export class MapComponent implements OnInit {
             maxZoom: 19,
             attribution: '© OpenStreetMap'
           }).addTo(this.map);
-          const icon = L.icon({iconUrl: '../../../assets/images/marker.png', iconSize: [20,25]})
-          var marker = L.marker([lat, long], {icon}).addTo(this.map);
+          const icon = L.icon({ iconUrl: '../../../assets/images/marker.png', iconSize: [20, 25] })
+          var marker = L.marker([lat, long], { icon }).addTo(this.map);
           document.getElementById("map")?.scrollIntoView();
         }
       })
