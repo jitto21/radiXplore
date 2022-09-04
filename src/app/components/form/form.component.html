@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="form-wrapper d-flex justify-content-center p-5">
+  <div class="form-wrapper d-flex justify-content-center p-5" id="form">
     <form [formGroup]="locationForm">
       <div class="d-flex justify-content-center">
         <mat-form-field appearance="outline">
@@ -28,8 +28,10 @@
         </mat-form-field>
       </div>
       <div class="d-flex justify-content-evenly form-buttons">
-        <button class="px-5 py-1" [disabled]="!locationForm.valid" mat-raised-button color="primary" (click)="onClickSubmit()">Submit</button>
-        <button class="px-5 py-1" [disabled]="locationForm.pristine" mat-raised-button color="warn" (click)="onClickReset()">Reset</button>
+        <button class="px-5 py-1" [disabled]="!locationForm.valid" mat-raised-button color="primary"
+          (click)="onClickSubmit()">Submit</button>
+        <button class="px-5 py-1" [disabled]="locationForm.pristine" mat-raised-button color="warn"
+          (click)="onClickReset()">Reset</button>
       </div>
     </form>
   </div>

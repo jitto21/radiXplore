@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MapServiceService } from 'src/app/services/map-service.service';
 import * as L from 'leaflet';
-import "leaflet-search/dist/leaflet-search.src.js";
+import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch'
 
 @Component({
   selector: 'app-map',
@@ -12,6 +12,9 @@ export class MapComponent implements OnInit {
 
   map: any;
   locationData: any;
+  provider = new OpenStreetMapProvider();
+
+
 
   constructor(private mapService: MapServiceService) { }
 
@@ -33,7 +36,20 @@ export class MapComponent implements OnInit {
             attribution: '© OpenStreetMap'
           }).addTo(this.map);
           const icon = L.icon({ iconUrl: '../../../assets/images/marker.png', iconSize: [20, 25] })
+          const searchControl = GeoSearchControl({
+            provider: this.provider,
+            marker: {
+              icon,
+              draggable: false,
+            },
+          })
+          searchControl.addTo(this.map)
+
           var marker = L.marker([lat, long], { icon }).addTo(this.map);
+          marker.bindPopup(data.name + " " + data.description)
+          marker.on('click', function (e) {
+            marker.openPopup();
+          });
           document.getElementById("map")?.scrollIntoView();
         }
       })
@@ -55,6 +71,10 @@ export class MapComponent implements OnInit {
       coordinates += lat + "\xB0 West";
     }
     return coordinates;
+  }
+
+  onClickGoTop() {
+    document.getElementById("form")?.scrollIntoView();
   }
 
 }
