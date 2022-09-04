@@ -56,19 +56,21 @@ export class MapComponent implements OnInit {
     })
   }
 
-  getCoordinates(lat: string, long: string): string {
+  getCoordinates(latitude: string, longitude: string): string {
     let coordinates = '';
-    if (+long >= 0 && +long <= 180) {
-      coordinates += long + "\xB0 North and ";
+    const lat = +latitude;
+    const long = +longitude;
+    if (lat >= 0 && lat <= 90) {
+      coordinates += lat + "\xB0 North and ";
     }
-    else if (+long <= 0 && +long >= -180) {
-      coordinates += long + "\xB0 South and ";
+    else if (lat <= 0 && lat >= -90) {
+      coordinates += lat*-1 + "\xB0 South and ";
     }
-    if (+lat >= 0 && +lat <= 90) {
-      coordinates += lat + "\xB0 East";
+    if (long >= 0 && long <= 180) {
+      coordinates += long + "\xB0 East";
     }
-    else if (+lat <= 0 && +lat >= -90) {
-      coordinates += lat + "\xB0 West";
+    else if (long <= 0 && long >= -180) {
+      coordinates += long*-1 + "\xB0 West";
     }
     return coordinates;
   }
